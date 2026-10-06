@@ -9,12 +9,16 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <div class="profile-links">
+    <a href="mailto:you@example.com" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fa-brands fa-google-scholar"></i></a>
+    <a href="https://github.com/aristotpap" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+    <a href="https://x.com/aristotpap" title="X (Twitter)" aria-label="X (Twitter)" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: false # includes a list of news items

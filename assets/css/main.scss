@@ -69,3 +69,34 @@ html[data-theme="dark"] {
 html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
   background-color: #bfa1f5;
 }
+
+// Contact icons under the profile photo: thin rings that fill in on hover
+.profile .profile-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 2rem; // shrinks to keep one row when the photo column is narrow
+    aspect-ratio: 1;
+    border: 1px solid var(--global-text-color);
+    border-radius: 50%;
+    color: var(--global-text-color);
+    font-size: 0.95rem;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--global-text-color);
+      color: var(--global-bg-color);
+      text-decoration: none;
+    }
+  }
+}
