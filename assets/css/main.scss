@@ -1,0 +1,61 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* Local override of al_folio_core 1.0.15 `assets/css/main.scss`: unchanged copy of the gem file,
+   plus the Neuralectic palette block at the end. Re-check against the gem after upgrading it:
+   `bundle exec al-folio upgrade overrides diff assets/css/main.scss` */
+
+/* Built-in Sass modules you’ll likely use across partials */
+@use "sass:math";
+@use "sass:string";
+
+/* Configure your design tokens BEFORE loading any of your partials.
+   Make sure `_sass/_variables.scss` declares `$max-content-width: 72rem !default;` */
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+/* Your project partials — convert these files to `@use "variables";`
+   (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+// Neuralectic palette: charcoal from the slide kit, creme in place of white
+$charcoal: #151419;
+$creme: #f6f2ea;
+
+:root {
+  --global-bg-color: #{$creme};
+  --global-card-bg-color: #{$creme};
+  --global-newsletter-bg-color: #{$creme};
+  --global-text-color: #{$charcoal};
+  --global-newsletter-text-color: #{$charcoal};
+  --global-footer-bg-color: #{$charcoal};
+  --global-footer-link-color: #{$creme};
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #{$charcoal};
+  --global-text-color: #{$creme};
+  --global-footer-bg-color: #{$creme};
+  --global-footer-text-color: #{$charcoal};
+  --global-footer-link-color: #{$charcoal};
+  --global-newsletter-bg-color: #{$creme};
+  --global-newsletter-text-color: #{$charcoal};
+}
