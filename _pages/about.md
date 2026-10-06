@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD at the University of Oxford | JPMorganChase PhD AI Research Fellow | Clarendon Scholar
+subtitle: PhD at the University of Oxford | J.P. Morgan AI Research Fellow | Clarendon Scholar
 
 profile:
   align: right
