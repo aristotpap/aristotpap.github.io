@@ -60,3 +60,12 @@ html[data-theme="dark"] {
   --global-newsletter-bg-color: #{$creme};
   --global-newsletter-text-color: #{$charcoal};
 }
+
+// Publication venue badges: deep violet from the slide kit, lavender in dark mode
+.publications ol.bibliography li .abbr abbr {
+  background-color: #4c1d95;
+}
+
+html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
+  background-color: #bfa1f5;
+}

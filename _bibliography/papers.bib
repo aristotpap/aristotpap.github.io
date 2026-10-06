@@ -1,115 +1,131 @@
----
----
-
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title     = {Relativity: the Special and General Theory},
-  author    = {Einstein, Albert},
-  year      = {1920},
-  publisher = {Methuen & Co Ltd},
-  html      = {relativity.html}
-}
-
-@book{einstein1956investigations,
+@article{rojas2026odyn,
+  abbr        = {arXiv},
   bibtex_show = {true},
-  title       = {Investigations on the Theory of the Brownian Movement},
-  author      = {Einstein, Albert},
-  year        = {1956},
-  publisher   = {Courier Corporation},
-  preview     = {brownian-motion.gif}
+  title       = {ODYN: An All-Shifted Non-Interior-Point Method for Quadratic Programming in Robotics and AI},
+  author      = {J. Rojas and Aristotelis Papatheodorou and Sergi Martinez and Andrea Patrizi and Ioannis Havoutis and Carlos Mastalli},
+  journal     = {arXiv preprint arXiv:2602.16005},
+  year        = {2026},
+  arxiv       = {2602.16005},
+  pdf         = {https://arxiv.org/pdf/2602.16005},
+  abstract    = {We introduce ODYN, a novel all-shifted primal-dual non-interior-point quadratic programming (QP) solver designed to efficiently handle challenging dense and sparse QPs. ODYN combines all-shifted nonlinear complementarity problem (NCP) functions with proximal method of multipliers to robustly address ill-conditioned and degenerate problems, without requiring linear independence of the constraints. It exhibits strong warm-start performance and is well suited to both general-purpose optimization, and robotics and AI applications, including model-based control, estimation, and kernel-based learning methods. We provide an open-source implementation and benchmark ODYN on the Maros-M\'esz\'aros test set, demonstrating state-of-the-art convergence performance in small-to-high-scale problems. The results highlight ODYN's superior warm-starting capabilities, which are critical in sequential and real-time settings common in robotics and AI. These advantages are further demonstrated by deploying ODYN as the backend of an SQP-based predictive control framework (OdynSQP), as the implicitly differentiable optimization layer for deep learning (ODYNLayer), and the optimizer of a contact-dynamics simulation (ODYNSim).},
+  s2_id       = {3a3a98b1a31df7d2dfd92e2546356bef8b28bc37}
 }
 
-@article{einstein1950meaning,
-  abbr        = {AJP},
+@article{papatheodorou2026calisym,
+  abbr        = {arXiv},
   bibtex_show = {true},
-  title       = {The meaning of relativity},
-  author      = {Einstein, Albert and Taub, AH},
-  journal     = {American Journal of Physics},
-  volume      = {18},
-  number      = {6},
-  pages       = {403--404},
-  year        = {1950},
-  publisher   = {American Association of Physics Teachers}
+  selected    = {true},
+  title       = {CaLiSym: Learning Symplectic Dynamics of Real-World Systems through Structured Canonical Lifts},
+  author      = {Aristotelis Papatheodorou and Pranav Vaidhyanathan and Natalia Ares and Ioannis Havoutis and Gerard J. Milburn},
+  journal     = {arXiv preprint arXiv:2607.06824},
+  year        = {2026},
+  arxiv       = {2607.06824},
+  pdf         = {https://arxiv.org/pdf/2607.06824},
+  abstract    = {Physics-informed learning promises data-efficient and stable dynamics prediction, yet its strongest geometric guarantees have largely remained confined to closed conservative systems. This excludes robotic systems of interest, where actuation, dissipation, and constraints exchange energy and momentum with the environment. We introduce CaLiSym, a lightweight framework that extends symplectic learning to such systems by changing where the geometric prior is imposed. Rather than enforcing symplecticity on the measured state, CaLiSym embeds the state and its ports into a lifted phase space, where the dynamics evolve through a symplectic map. The lift is explicit and algebraic, requiring neither recurrent latent states, transformer decoders, implicit optimization, nor inference-time numerical integration. We instantiate the framework with SympNet predictors and introduce GRB-SympNet, a B-spline variant combining approximation with exact symplectic structure. Experiments on a controlled dissipative double pendulum, a real-world quadrotor, and a contact-constrained real-world quadruped demonstrate the lowest out-of-distribution autoregressive rollout error across systems, improving by up to 69.5\% while using fewer parameters and up to 85x fewer floating-point operations per step than sequence-model baselines. The lifted dynamics preserve the symplectic form to numerical precision, extending symplectic learning beyond conservative mechanics toward real-world robotics.},
+  s2_id       = {801cc4ae94a7a161a02c0e1513f98631ea5e8369}
 }
 
-@article{PhysRev.47.777,
-  abbr              = {PhysRev},
-  title             = {Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author            = {Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract          = {In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal           = {Phys. Rev.},
-  location          = {New Jersey},
-  volume            = {47},
-  issue             = {10},
-  pages             = {777--780},
-  numpages          = {0},
-  year              = {1935},
-  month             = {May},
-  publisher         = aps,
-  doi               = {10.1103/PhysRev.47.777},
-  url               = {https://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html              = {https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf               = {example_pdf.pdf},
-  altmetric         = {248277},
-  dimensions        = {true},
-  google_scholar_id = {qyhmnyLat1gC},
-  video             = {https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info   = {. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation        = {* Example use of superscripts<br>† Albert Einstein},
-  selected          = {true},
-  inspirehep_id     = {3255}
-}
-
-@article{einstein1905molekularkinetischen,
-  title     = {{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author    = {Einstein, A.},
-  journal   = {Annalen der physik},
-  volume    = {322},
-  number    = {8},
-  pages     = {549--560},
-  year      = {1905},
-  publisher = {Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr    = {Ann. Phys.},
-  title   = {Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author  = {Einstein, A.},
-  journal = {Ann. Phys.},
-  volume  = {17},
-  pages   = {549--560},
-  year    = {1905}
-}
-
-@article{einstein1905electrodynamics,
-  title  = {On the electrodynamics of moving bodies},
-  author = {Einstein, A.},
-  year   = {1905}
-}
-
-@article{einstein1905photoelectriceffect,
+@article{papatheodorou2026elastic,
+  abbr        = {arXiv},
   bibtex_show = {true},
-  abbr        = {Ann. Phys.},
-  title       = {{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}},
-  author      = {Albert Einstein},
-  abstract    = {This is the abstract text.},
-  journal     = {Ann. Phys.},
-  volume      = {322},
-  number      = {6},
-  pages       = {132--148},
-  year        = {1905},
-  doi         = {10.1002/andp.19053220607},
-  award       = {Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name  = {Nobel Prize}
+  selected    = {true},
+  title       = {Elastic ODYN: Differentiable Optimization for Infeasible Control and Learning in Robotics},
+  author      = {Aristotelis Papatheodorou and Joseph Rojas and Ioannis Havoutis and Carlos Mastalli},
+  journal     = {arXiv preprint arXiv:2606.16564},
+  year        = {2026},
+  arxiv       = {2606.16564},
+  pdf         = {https://arxiv.org/pdf/2606.16564},
+  abstract    = {Robotic systems routinely encounter conflicting objectives, modeling errors, and degenerate contact conditions that render quadratic programs (QPs) infeasible. Yet most optimization solvers and differentiable QP layers assume feasibility, leading to numerical failures, unstable gradients, or solver breakdown when constraints cannot be simultaneously satisfied. We present Elastic ODYN, a primal-dual non-interior-point QP solver that handles infeasibility through smooth squared-$\ell_2$ elastic relaxations. The formulation remains well posed under ill-conditioning and degeneracy, supports warm starting, and converges to closest-to-feasible solutions, with lightweight refinement recovering physically meaningful dual variables. Building on this framework, we develop Elastic ODYNLayer, a differentiable QP layer with stable gradients under infeasibility, and Elastic OdynSQP, an SQP method that resolves inconsistent subproblems and intrinsically infeasible optimal control tasks through selective constraint elasticity. Across benchmark QPs, singular contact mechanics, differentiable parameter identification, and quadrupedal and humanoid trajectory optimization, Elastic ODYN outperforms state-of-the-art elastic QP solvers in robustness, warm-start performance, and convergence reliability, enabling optimization, simulation, control, and learning beyond standard feasibility assumptions.},
+  s2_id       = {9eeaa688d29a8472439fc1b7cbc822df50d0ac02}
 }
 
-@book{przibram1967letters,
+@article{papatheodorou2025learning,
+  abbr        = {arXiv},
   bibtex_show = {true},
-  title       = {Letters on wave mechanics},
-  author      = {Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year        = {1967},
-  publisher   = {Vision},
-  preview     = {wave-mechanics.gif},
-  abbr        = {Vision}
+  selected    = {true},
+  title       = {Learning Physical Systems: Symplectification via Gauge Fixing in Dirac Structures},
+  author      = {Aristotelis Papatheodorou and Pranav Vaidhyanathan and Natalia Ares and Ioannis Havoutis},
+  journal     = {arXiv preprint arXiv:2506.18812},
+  year        = {2025},
+  arxiv       = {2506.18812},
+  pdf         = {https://arxiv.org/pdf/2506.18812},
+  abstract    = {Physics-informed deep learning has achieved remarkable progress by embedding geometric priors, such as Hamiltonian symmetries and variational principles, into neural networks, enabling structure-preserving models that extrapolate with high accuracy. However, in systems with dissipation and holonomic constraints, ubiquitous in legged locomotion and multibody robotics, the canonical symplectic form becomes degenerate, undermining the very invariants that guarantee stability and long-term prediction. In this work, we tackle this foundational limitation by introducing Presymplectification Networks (PSNs), the first framework to learn the symplectification lift via Dirac structures, restoring a non-degenerate symplectic geometry by embedding constrained systems into a higher-dimensional manifold. Our architecture combines a recurrent encoder with a flow-matching objective to learn the augmented phase-space dynamics end-to-end. We then attach a lightweight Symplectic Network (SympNet) to forecast constrained trajectories while preserving energy, momentum, and constraint satisfaction. We demonstrate our method on the dynamics of the ANYmal quadruped robot, a challenging contact-rich, multibody system. To the best of our knowledge, this is the first framework that effectively bridges the gap between constrained, dissipative mechanical systems and symplectic learning, unlocking a whole new class of geometric machine learning models, grounded in first principles yet adaptable from data.},
+  s2_id       = {182020cf9f4ddfa79ad78ce10925f3bea9f156d2}
+}
+
+@article{vaidhyanathan2025quantgraph,
+  abbr        = {arXiv},
+  bibtex_show = {true},
+  title       = {QuantGraph: A Receding-Horizon Quantum Graph Solver},
+  author      = {Pranav Vaidhyanathan and Aristotelis Papatheodorou and D. Arvidsson-Shukur and M. Mitchison and Natalia Ares and Ioannis Havoutis},
+  journal     = {arXiv preprint arXiv:2512.15476},
+  year        = {2025},
+  arxiv       = {2512.15476},
+  pdf         = {https://arxiv.org/pdf/2512.15476},
+  abstract    = {Dynamic programming is a cornerstone of graph-based optimization. While effective, it scales unfavorably with problem size. In this work, we present QuantGraph, a two-stage quantum-enhanced framework that casts local and global graph-optimization problems as quantum searches over discrete trajectory spaces. The solver is designed to operate efficiently by first finding a sequence of locally optimal transitions in the graph (local stage), without considering full trajectories. The accumulated cost of these transitions acts as a threshold that prunes the search space (up to 60\% reduction for certain examples). The subsequent global stage, based on this threshold, refines the solution. Both stages utilize variants of the Grover-adaptive-search algorithm. To achieve scalability and robustness, we draw on principles from control theory and embed QuantGraph's global stage within a receding-horizon model-predictive-control scheme. This classical layer stabilizes and guides the quantum search, improving precision and reducing computational burden. In practice, the resulting closed-loop system exhibits robust behavior and lower overall complexity. Notably, for a fixed query budget, QuantGraph attains a 2x increase in control-discretization precision while still benefiting from Grover-search's inherent quadratic speedup compared to classical methods.},
+  s2_id       = {b097de2b9055d0fec20934f1edcb167ade9d4408}
+}
+
+@article{vaidhyanathan2025metasym,
+  abbr        = {TMLR},
+  bibtex_show = {true},
+  title       = {MetaSym: A Symplectic Meta-learning Framework for Physical Intelligence},
+  author      = {Pranav Vaidhyanathan and Aristotelis Papatheodorou and M. Mitchison and Natalia Ares and Ioannis Havoutis},
+  journal     = {Transactions on Machine Learning Research},
+  year        = {2026},
+  arxiv       = {2502.16667},
+  pdf         = {https://arxiv.org/pdf/2502.16667},
+  abstract    = {Scalable and generalizable physics-aware deep learning has long been considered a significant challenge with various applications across diverse domains ranging from robotics to molecular dynamics. Central to almost all physical systems are symplectic forms, the geometric backbone that underpins fundamental invariants like energy and momentum. In this work, we introduce a novel deep learning framework, MetaSym. In particular, MetaSym combines a strong symplectic inductive bias obtained from a symplectic encoder, and an autoregressive decoder with meta-attention. This principled design ensures that core physical invariants remain intact, while allowing flexible, data efficient adaptation to system heterogeneities. We benchmark MetaSym with highly varied and realistic datasets, such as a high-dimensional spring-mesh system Otness et al. (2021), an open quantum system with dissipation and measurement backaction, and robotics-inspired quadrotor dynamics. Crucially, we fine-tune and deploy MetaSym on real-world quadrotor data, demonstrating robustness to sensor noise and real-world uncertainty. Across all tasks, MetaSym achieves superior few-shot adaptation and outperforms larger state-of-the-art (SOTA) models.},
+  s2_id       = {db173a8fcd39c5509f881d841c258d36561ef986}
+}
+
+@inproceedings{mitchell2024gaitor,
+  abbr        = {CoRL},
+  bibtex_show = {true},
+  title       = {Gaitor: Learning a Unified Representation Across Gaits for Real-World Quadruped Locomotion},
+  author      = {Alexander L. Mitchell and W. Merkt and Aristotelis Papatheodorou and Ioannis Havoutis and Ingmar Posner},
+  booktitle   = {Conference on Robot Learning},
+  year        = {2024},
+  arxiv       = {2405.19452},
+  pdf         = {https://arxiv.org/pdf/2405.19452},
+  abstract    = {The current state-of-the-art in quadruped locomotion is able to produce a variety of complex motions. These methods either rely on switching between a discrete set of skills or learn a distribution across gaits using complex black-box models. Alternatively, we present Gaitor, which learns a disentangled and 2D representation across locomotion gaits. This learnt representation forms a planning space for closed-loop control delivering continuous gait transitions and perceptive terrain traversal. Gaitor's latent space is readily interpretable and we discover that during gait transitions, novel unseen gaits emerge. The latent space is disentangled with respect to footswing heights and lengths. This means that these gait characteristics can be varied independently in the 2D latent representation. Together with a simple terrain encoding and a learnt planner operating in the latent space, Gaitor can take motion commands including desired gait type and swing characteristics all while reacting to uneven terrain. We evaluate Gaitor in both simulation and the real world on the ANYmal C platform. To the best of our knowledge, this is the first work learning a unified and interpretable latent space for multiple gaits, resulting in continuous blending between different locomotion modes on a real quadruped robot. An overview of the methods and results in this paper is found at https://youtu.be/eVFQbRyilCA.},
+  s2_id       = {d6da49e814d2721437e86b0fe003824ed6656e25}
+}
+
+@inproceedings{papatheodorou2023momentum,
+  abbr        = {IROS},
+  bibtex_show = {true},
+  selected    = {true},
+  title       = {Momentum-Aware Trajectory Optimisation using Full-Centroidal Dynamics and Implicit Inverse Kinematics},
+  author      = {Aristotelis Papatheodorou and W. Merkt and Alexander L. Mitchell and Ioannis Havoutis},
+  booktitle   = {2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages       = {11940--11947},
+  year        = {2024},
+  doi         = {10.1109/IROS58592.2024.10801374},
+  arxiv       = {2310.06074},
+  pdf         = {https://arxiv.org/pdf/2310.06074},
+  abstract    = {The current state-of-the-art gradient-based optimisation frameworks are able to produce impressive dynamic manoeuvres such as linear and rotational jumps. However, these methods, which optimise over the full rigid-body dynamics of the robot, often require precise foothold locations apriori, while real-time performance is not guaranteed without elaborate regularisation and tuning of the cost function. In contrast, we investigate the advantages of a task-space optimisation framework, with special focus on acrobatic motions. Our proposed formulation exploits the system's high-order nonlinearities, such as the nonholonomy of the angular momentum, in order to produce feasible, high-acceleration manoeuvres. By leveraging the full-centroidal dynamics of the quadruped ANYmal C and directly optimising its footholds and contact forces, the framework is capable of producing efficient motion plans with low computational overhead. Finally, we deploy our proposed framework on the ANYmal C platform, and demonstrate its true capabilities through real-world experiments, with the successful execution of high-acceleration motions, such as linear and rotational jumps. Extensive analysis of these shows that the robot's dynamics can be exploited to surpass its hardware limitations of having a high mass and low-torque limits.},
+  s2_id       = {91f4ab0160ed8563fe1837a223baaf451b784623}
+}
+
+@inproceedings{mastrogeorgiou2022learning,
+  abbr        = {CLAWAR},
+  bibtex_show = {true},
+  title       = {Learning Energy-Efficient Trotting for Legged Robots},
+  author      = {Athanasios S. Mastrogeorgiou and Aristotelis Papatheodorou and Konstantinos Koutsoukis and E. Papadopoulos},
+  booktitle   = {International Conference on Climbing and Walking Robots and the Support Technologies for Mobile Machines},
+  pages       = {204--215},
+  year        = {2022},
+  doi         = {10.1007/978-3-031-15226-9_21},
+  s2_id       = {d3c5a33ff54e16341d72441fa61547fa0cfd2dc5}
+}
+
+@mastersthesis{papatheodorou2021design,
+  bibtex_show = {true},
+  title       = {Design \& implementation of a real-time distributed EtherCAT-based motion control system for a multi-DoF quadruped robot},
+  author      = {Aristotelis Papatheodorou},
+  school      = {National Technical University of Athens},
+  year        = {2021},
+  doi         = {10.26240/HEAL.NTUA.21436},
+  s2_id       = {ed859e5c1c48e73f60870d1dae41433bcd3dde23}
 }

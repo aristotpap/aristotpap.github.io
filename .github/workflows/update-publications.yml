@@ -1,0 +1,61 @@
+name: Update publications
+
+# Weekly: adds papers from your Semantic Scholar profile (`semanticscholar_id` in _data/socials.yml)
+# that are not in _bibliography/papers.bib yet, and opens a pull request for you to review and merge.
+# Needs Settings -> Actions -> General -> "Allow GitHub Actions to create and approve pull requests".
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-publications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for an open publications pull request
+        id: open_pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh pr list --head publications/update --state open --json number --jq '.[].number' | head -n 1)
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+          if [ -n "$number" ]; then
+            echo "Pull request #$number with new papers is still open; merge or close it first." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Set up Python
+        if: steps.open_pr.outputs.number == ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Add new papers from Semantic Scholar
+        if: steps.open_pr.outputs.number == ''
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }} # optional; add this secret if Semantic Scholar rate limits keep failing the job
+        run: python bin/update_publications.py --summary "$RUNNER_TEMP/new_papers.md"
+
+      - name: Open pull request
+        if: steps.open_pr.outputs.number == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- _bibliography/papers.bib; then
+            echo "No new papers." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c publications/update
+          git commit -m "Add new papers from Semantic Scholar" -- _bibliography/papers.bib
+          git push --force origin publications/update
+          gh pr create --base main --head publications/update --title "New papers from Semantic Scholar" --body-file "$RUNNER_TEMP/new_papers.md"
