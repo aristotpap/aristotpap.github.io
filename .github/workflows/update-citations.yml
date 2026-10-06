@@ -1,10 +1,8 @@
 name: Update Google Scholar Citations
 
+# Schedule turned off: scholar_userid in _data/socials.yml is still the template's (Einstein's) profile.
+# To re-enable, set your own Google Scholar ID there and restore the schedule, e.g. - cron: "0 0 * * 1".
 on:
-  schedule:
-    - cron: "0 0 * * 1" # Monday
-    - cron: "0 0 * * 3" # Wednesday
-    - cron: "0 0 * * 5" # Friday
   workflow_dispatch:
 
 jobs:
