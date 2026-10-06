@@ -38,7 +38,7 @@
 
 // Neuralectic palette: charcoal from the slide kit, creme in place of white
 $charcoal: #151419;
-$creme: #f6f2ea;
+$creme: #f5f4ef;
 
 :root {
   --global-bg-color: #{$creme};
@@ -52,7 +52,6 @@ $creme: #f6f2ea;
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #{$charcoal};
   --global-text-color: #{$creme};
   --global-footer-bg-color: #{$creme};
   --global-footer-text-color: #{$charcoal};
