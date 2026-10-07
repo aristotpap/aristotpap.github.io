@@ -18,7 +18,7 @@ profile:
     <a href="/assets/pdf/cv.pdf" title="CV" aria-label="CV" target="_blank" rel="noopener"><i class="ai ai-cv"></i></a>
     </div>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"; off in favour of Recent Publications below
 social: false # includes social icons at the bottom of the page
 
 announcements:
@@ -37,3 +37,14 @@ I'm a PhD student at the [University of Oxford](https://www.ox.ac.uk/), where I 
 I see physics as a natural verifier for physical intelligence. Lean gave mathematical reasoning a checker that cannot be fooled, and that has helped AI make real progress on long-standing open problems. I believe physical invariants can play a similar role in robotics: robots have geometry, and they exchange energy and momentum with the world in ways governed by physical laws. My work explores how to build this structure into learning and control, with the aim of making robots more data-efficient, more robust and easier to understand.
 
 Before Oxford, I earned my M.Eng. in Mechanical Engineering with honours from the [National Technical University of Athens](https://www.ntua.gr/en/). There I was a member of the legged robots team at the Control Systems Lab, supervised by [Prof. Evangelos Papadopoulos](https://nereus.mech.ntua.gr/), and spent several years developing distributed, real-time motion control software and electronics. I have also worked as an R&D engineer in embedded systems, control and AI.
+
+<h2 style="clear: both">
+  <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Recent Publications</a>
+</h2>
+
+<!-- The three newest papers: papers.bib is kept newest first, and bin/update_publications.py adds new papers at the top -->
+<div class="publications">
+
+{% bibliography --group_by none --max 3 %}
+
+</div>

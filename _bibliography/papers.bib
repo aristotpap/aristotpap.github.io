@@ -41,6 +41,20 @@
   s2_id       = {3a3a98b1a31df7d2dfd92e2546356bef8b28bc37}
 }
 
+@article{vaidhyanathan2025metasym,
+  abbr        = {TMLR},
+  bibtex_show = {true},
+  title       = {MetaSym: A Symplectic Meta-learning Framework for Physical Intelligence},
+  author      = {Pranav Vaidhyanathan* and Aristotelis Papatheodorou* and Mark Mitchison and Natalia Ares and Ioannis Havoutis},
+  annotation  = {* Equal contribution},
+  journal     = {Transactions on Machine Learning Research},
+  year        = {2026},
+  arxiv       = {2502.16667},
+  pdf         = {https://arxiv.org/pdf/2502.16667},
+  abstract    = {Scalable and generalizable physics-aware deep learning has long been considered a significant challenge with various applications across diverse domains ranging from robotics to molecular dynamics. Central to almost all physical systems are symplectic forms, the geometric backbone that underpins fundamental invariants like energy and momentum. In this work, we introduce a novel deep learning framework, MetaSym. In particular, MetaSym combines a strong symplectic inductive bias obtained from a symplectic encoder, and an autoregressive decoder with meta-attention. This principled design ensures that core physical invariants remain intact, while allowing flexible, data efficient adaptation to system heterogeneities. We benchmark MetaSym with highly varied and realistic datasets, such as a high-dimensional spring-mesh system Otness et al. (2021), an open quantum system with dissipation and measurement backaction, and robotics-inspired quadrotor dynamics. Crucially, we fine-tune and deploy MetaSym on real-world quadrotor data, demonstrating robustness to sensor noise and real-world uncertainty. Across all tasks, MetaSym achieves superior few-shot adaptation and outperforms larger state-of-the-art (SOTA) models.},
+  s2_id       = {db173a8fcd39c5509f881d841c258d36561ef986}
+}
+
 @inproceedings{papatheodorou2025learning,
   abbr        = {RSS Workshop},
   bibtex_show = {true},
@@ -67,20 +81,6 @@
   pdf         = {https://arxiv.org/pdf/2512.15476},
   abstract    = {Dynamic programming is a cornerstone of graph-based optimization. While effective, it scales unfavorably with problem size. In this work, we present QuantGraph, a two-stage quantum-enhanced framework that casts local and global graph-optimization problems as quantum searches over discrete trajectory spaces. The solver is designed to operate efficiently by first finding a sequence of locally optimal transitions in the graph (local stage), without considering full trajectories. The accumulated cost of these transitions acts as a threshold that prunes the search space (up to 60\% reduction for certain examples). The subsequent global stage, based on this threshold, refines the solution. Both stages utilize variants of the Grover-adaptive-search algorithm. To achieve scalability and robustness, we draw on principles from control theory and embed QuantGraph's global stage within a receding-horizon model-predictive-control scheme. This classical layer stabilizes and guides the quantum search, improving precision and reducing computational burden. In practice, the resulting closed-loop system exhibits robust behavior and lower overall complexity. Notably, for a fixed query budget, QuantGraph attains a 2x increase in control-discretization precision while still benefiting from Grover-search's inherent quadratic speedup compared to classical methods.},
   s2_id       = {b097de2b9055d0fec20934f1edcb167ade9d4408}
-}
-
-@article{vaidhyanathan2025metasym,
-  abbr        = {TMLR},
-  bibtex_show = {true},
-  title       = {MetaSym: A Symplectic Meta-learning Framework for Physical Intelligence},
-  author      = {Pranav Vaidhyanathan* and Aristotelis Papatheodorou* and Mark Mitchison and Natalia Ares and Ioannis Havoutis},
-  annotation  = {* Equal contribution},
-  journal     = {Transactions on Machine Learning Research},
-  year        = {2026},
-  arxiv       = {2502.16667},
-  pdf         = {https://arxiv.org/pdf/2502.16667},
-  abstract    = {Scalable and generalizable physics-aware deep learning has long been considered a significant challenge with various applications across diverse domains ranging from robotics to molecular dynamics. Central to almost all physical systems are symplectic forms, the geometric backbone that underpins fundamental invariants like energy and momentum. In this work, we introduce a novel deep learning framework, MetaSym. In particular, MetaSym combines a strong symplectic inductive bias obtained from a symplectic encoder, and an autoregressive decoder with meta-attention. This principled design ensures that core physical invariants remain intact, while allowing flexible, data efficient adaptation to system heterogeneities. We benchmark MetaSym with highly varied and realistic datasets, such as a high-dimensional spring-mesh system Otness et al. (2021), an open quantum system with dissipation and measurement backaction, and robotics-inspired quadrotor dynamics. Crucially, we fine-tune and deploy MetaSym on real-world quadrotor data, demonstrating robustness to sensor noise and real-world uncertainty. Across all tasks, MetaSym achieves superior few-shot adaptation and outperforms larger state-of-the-art (SOTA) models.},
-  s2_id       = {db173a8fcd39c5509f881d841c258d36561ef986}
 }
 
 @inproceedings{mitchell2024gaitor,
