@@ -69,6 +69,11 @@ html[data-theme="dark"] {
   --global-code-bg-color: color-mix(in srgb, #{$creme} 8%, transparent);
 }
 
+// Long venue badges such as "RSS Workshop" wrap onto two lines instead of being cut off in the narrow badge column
+.publications ol.bibliography li .abbr abbr {
+  white-space: normal;
+}
+
 // Venue badges take the theme colour; links inside them are hardcoded white, which vanishes on a creme badge
 .publications ol.bibliography li .abbr abbr a {
   color: inherit;
