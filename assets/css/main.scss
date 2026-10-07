@@ -110,8 +110,9 @@ html[data-theme="dark"] {
   }
 }
 
-// The theme's about layout hardcodes "selected publications"; show it as "Selected Publications"
-.post article > h2 a[href$="/publications/"] {
+// The theme's about layout hardcodes "selected publications"; show it as "Selected Publications".
+// No attribute selector: PurgeCSS in deploy.yml strips those, which silently dropped the earlier rule.
+.post article > h2 > a {
   text-transform: capitalize;
 }
 
