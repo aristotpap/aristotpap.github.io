@@ -1,0 +1,39 @@
+name: Check publication links
+
+# Checks every link on the deployed publications page (arXiv, DOI, PDF, video, ...) with
+# test/publication_links.py: after each successful deploy, and weekly to catch links that die later.
+# It reads the gh-pages branch rather than the live URL, which can lag a deploy by a minute or two.
+
+on:
+  workflow_run:
+    workflows: [Deploy site]
+    types: [completed]
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check-publication-links:
+    # after a workflow_run, only when the deploy succeeded and published (pull-request runs only build)
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout deployed site
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: deployed-site
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Check links in the publication list
+        run: python test/publication_links.py deployed-site/publications/index.html
