@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: PhD at the University of Oxford | J.P. Morgan AI Research Fellow | Clarendon Scholar
 

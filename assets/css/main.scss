@@ -36,7 +36,8 @@
 @use "teachings";
 @use "typograms";
 
-// Neuralectic palette: charcoal from the slide kit, creme in place of white
+// Neuralectic palette: charcoal from the slide kit, creme in place of white.
+// Monochrome: the theme's accent colour is the text colour, so links, badges and the nav use no other hue.
 $charcoal: #151419;
 $creme: #f5f4ef;
 
@@ -49,6 +50,10 @@ $creme: #f5f4ef;
   --global-footer-bg-color: #{$charcoal};
   --global-footer-text-color: #{$creme};
   --global-footer-link-color: #{$creme};
+  --global-theme-color: #{$charcoal};
+  --global-hover-color: #{$charcoal};
+  --global-hover-text-color: #{$creme};
+  --global-code-bg-color: color-mix(in srgb, #{$charcoal} 6%, transparent);
 }
 
 html[data-theme="dark"] {
@@ -58,15 +63,15 @@ html[data-theme="dark"] {
   --global-footer-link-color: #{$charcoal};
   --global-newsletter-bg-color: #{$creme};
   --global-newsletter-text-color: #{$charcoal};
+  --global-theme-color: #{$creme};
+  --global-hover-color: #{$creme};
+  --global-hover-text-color: #{$charcoal};
+  --global-code-bg-color: color-mix(in srgb, #{$creme} 8%, transparent);
 }
 
-// Publication venue badges: deep violet from the slide kit, lavender in dark mode
-.publications ol.bibliography li .abbr abbr {
-  background-color: #4c1d95;
-}
-
-html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
-  background-color: #bfa1f5;
+// Venue badges take the theme colour; links inside them are hardcoded white, which vanishes on a creme badge
+.publications ol.bibliography li .abbr abbr a {
+  color: inherit;
 }
 
 // Contact icons under the profile photo: thin rings that fill in on hover
@@ -98,4 +103,48 @@ html[data-theme="dark"] .publications ol.bibliography li .abbr abbr {
       text-decoration: none;
     }
   }
+}
+
+// The theme's about layout hardcodes "selected publications"; show it as "Selected Publications"
+.post article > h2 a[href$="/publications/"] {
+  text-transform: capitalize;
+}
+
+// Links share the text colour, so underline them in page content (faint underline, solid on hover)
+.post a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+// ...except links that already look clickable: buttons, badges, dashed author names, icon rings, section headings
+.post .btn,
+.post .badge a,
+.post .badges a,
+.post .author a,
+.post .profile-links a,
+.post h2 > a:not(:hover) {
+  text-decoration: none;
+}
+
+// Colour no longer marks the current page in the nav, so underline it
+.navbar .nav-item.active > .nav-link {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+// Paper buttons fill in on hover, like the icon rings, instead of changing colour
+.publications ol.bibliography li .links a.btn:hover {
+  background-color: var(--global-text-color);
+  color: var(--global-bg-color);
+}
+
+// Publication filter matches: the theme highlights in the accent colour, which now equals the text colour
+::highlight(search) {
+  background-color: var(--global-text-color);
+  color: var(--global-bg-color);
 }
