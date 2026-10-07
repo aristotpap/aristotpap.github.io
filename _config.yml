@@ -414,6 +414,7 @@ filtered_bibtex_keywords:
     slides,
     supp,
     video,
+    video_auto,
     website,
   ]
 

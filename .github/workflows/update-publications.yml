@@ -1,7 +1,8 @@
 name: Update publications
 
 # Weekly: adds papers from your Semantic Scholar profile (`semanticscholar_id` in _data/socials.yml)
-# that are not in _bibliography/papers.bib yet, and opens a pull request for you to review and merge.
+# that are not in _bibliography/papers.bib yet, points each paper's video at the one its newest arXiv
+# version links, and opens a pull request for you to review and merge.
 # Needs Settings -> Actions -> General -> "Allow GitHub Actions to create and approve pull requests".
 
 on:
@@ -38,11 +39,11 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Add new papers from Semantic Scholar
+      - name: Add new papers and update videos
         if: steps.open_pr.outputs.number == ''
         env:
           S2_API_KEY: ${{ secrets.S2_API_KEY }} # optional; add this secret if Semantic Scholar rate limits keep failing the job
-        run: python bin/update_publications.py --summary "$RUNNER_TEMP/new_papers.md"
+        run: python bin/update_publications.py --summary "$RUNNER_TEMP/summary.md"
 
       - name: Open pull request
         if: steps.open_pr.outputs.number == ''
@@ -50,12 +51,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet -- _bibliography/papers.bib; then
-            echo "No new papers." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "No new papers and no video changes." | tee -a "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c publications/update
-          git commit -m "Add new papers from Semantic Scholar" -- _bibliography/papers.bib
+          git commit -m "Update publications from Semantic Scholar and arXiv" -- _bibliography/papers.bib
           git push --force origin publications/update
-          gh pr create --base main --head publications/update --title "New papers from Semantic Scholar" --body-file "$RUNNER_TEMP/new_papers.md"
+          gh pr create --base main --head publications/update --body-file "$RUNNER_TEMP/summary.md" \
+            --title "Publication updates from Semantic Scholar and arXiv"
