@@ -41,6 +41,7 @@ Before Oxford, I earned my M.Eng. in Mechanical Engineering with honors from the
 <h2 style="clear: both">
   <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Recent Publications</a>
 </h2>
+<hr style="border: 0; border-top: 1px solid var(--global-divider-color)">
 
 <!-- The three newest papers: papers.bib is kept newest first, and bin/update_publications.py adds new papers at the top -->
 <div class="publications">
