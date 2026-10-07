@@ -32,8 +32,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm a PhD student at the University of Oxford, where I work with Prof. Ioannis Havoutis at the intersection of AI, robotics and classical mechanics. I'm a Clarendon Scholar and a J.P. Morgan AI Research Fellow, and during my PhD I've been fortunate to visit and collaborate with the RoMI Lab at the UK National Robotarium, led by Prof. Carlos Mastalli.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I see physics as a natural verifier for physical intelligence. Lean gave mathematical reasoning a checker that cannot be fooled, and that has helped AI make real progress on long-standing open problems. I believe physical invariants can play a similar role in robotics: robots have geometry, and they exchange energy and momentum with the world in ways governed by physical laws. My work explores how to build this structure into learning and control, with the aim of making robots more data-efficient, more robust and easier to understand.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Before Oxford, I earned my M.Eng. in Mechanical Engineering with honours from the National Technical University of Athens. There I was a member of the legged robots team at the Control Systems Lab, supervised by Prof. Evangelos Papadopoulos, and spent several years developing distributed, high-precision real-time electronics and control software. I have also worked as an R&D engineer in embedded systems, control and AI.
