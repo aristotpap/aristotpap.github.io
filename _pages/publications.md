@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: Papers and preprints, newest first.
+description: Please refer to Google Scholar for the most up-to-date list of my publications.
 nav: true
 nav_order: 2
 ---
