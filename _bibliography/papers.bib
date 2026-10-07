@@ -23,6 +23,8 @@
   year        = {2026},
   arxiv       = {2606.16564},
   pdf         = {https://arxiv.org/pdf/2606.16564},
+  video       = {https://youtu.be/X9AgWGu5Eug},
+  video_auto  = {true},
   abstract    = {Robotic systems routinely encounter conflicting objectives, modeling errors, and degenerate contact conditions that render quadratic programs (QPs) infeasible. Yet most optimization solvers and differentiable QP layers assume feasibility, leading to numerical failures, unstable gradients, or solver breakdown when constraints cannot be simultaneously satisfied. We present Elastic ODYN, a primal-dual non-interior-point QP solver that handles infeasibility through smooth squared-$\ell_2$ elastic relaxations. The formulation remains well posed under ill-conditioning and degeneracy, supports warm starting, and converges to closest-to-feasible solutions, with lightweight refinement recovering physically meaningful dual variables. Building on this framework, we develop Elastic ODYNLayer, a differentiable QP layer with stable gradients under infeasibility, and Elastic OdynSQP, an SQP method that resolves inconsistent subproblems and intrinsically infeasible optimal control tasks through selective constraint elasticity. Across benchmark QPs, singular contact mechanics, differentiable parameter identification, and quadrupedal and humanoid trajectory optimization, Elastic ODYN outperforms state-of-the-art elastic QP solvers in robustness, warm-start performance, and convergence reliability, enabling optimization, simulation, control, and learning beyond standard feasibility assumptions.},
   s2_id       = {9eeaa688d29a8472439fc1b7cbc822df50d0ac02}
 }
@@ -37,6 +39,8 @@
   year        = {2026},
   arxiv       = {2602.16005},
   pdf         = {https://arxiv.org/pdf/2602.16005},
+  video       = {https://youtu.be/fJqjgdT2De0},
+  video_auto  = {true},
   abstract    = {We introduce ODYN, a novel all-shifted primal-dual non-interior-point quadratic programming (QP) solver designed to efficiently handle challenging dense and sparse QPs. ODYN combines all-shifted nonlinear complementarity problem (NCP) functions with proximal method of multipliers to robustly address ill-conditioned and degenerate problems, without requiring linear independence of the constraints. It exhibits strong warm-start performance and is well suited to both general-purpose optimization, and robotics and AI applications, including model-based control, estimation, and kernel-based learning methods. We provide an open-source implementation and benchmark ODYN on the Maros-M\'esz\'aros test set, demonstrating state-of-the-art convergence performance in small-to-high-scale problems. The results highlight ODYN's superior warm-starting capabilities, which are critical in sequential and real-time settings common in robotics and AI. These advantages are further demonstrated by deploying ODYN as the backend of an SQP-based predictive control framework (OdynSQP), as the implicitly differentiable optimization layer for deep learning (ODYNLayer), and the optimizer of a contact-dynamics simulation (ODYNSim).},
   s2_id       = {3a3a98b1a31df7d2dfd92e2546356bef8b28bc37}
 }
@@ -65,6 +69,7 @@
   year        = {2025},
   arxiv       = {2506.18812},
   pdf         = {https://arxiv.org/pdf/2506.18812},
+  video       = {https://youtu.be/2Ta4N6mgVvo?t=2745},
   abstract    = {Physics-informed deep learning has achieved remarkable progress by embedding geometric priors, such as Hamiltonian symmetries and variational principles, into neural networks, enabling structure-preserving models that extrapolate with high accuracy. However, in systems with dissipation and holonomic constraints, ubiquitous in legged locomotion and multibody robotics, the canonical symplectic form becomes degenerate, undermining the very invariants that guarantee stability and long-term prediction. In this work, we tackle this foundational limitation by introducing Presymplectification Networks (PSNs), the first framework to learn the symplectification lift via Dirac structures, restoring a non-degenerate symplectic geometry by embedding constrained systems into a higher-dimensional manifold. Our architecture combines a recurrent encoder with a flow-matching objective to learn the augmented phase-space dynamics end-to-end. We then attach a lightweight Symplectic Network (SympNet) to forecast constrained trajectories while preserving energy, momentum, and constraint satisfaction. We demonstrate our method on the dynamics of the ANYmal quadruped robot, a challenging contact-rich, multibody system. To the best of our knowledge, this is the first framework that effectively bridges the gap between constrained, dissipative mechanical systems and symplectic learning, unlocking a whole new class of geometric machine learning models, grounded in first principles yet adaptable from data.},
   s2_id       = {182020cf9f4ddfa79ad78ce10925f3bea9f156d2}
 }
@@ -92,6 +97,8 @@
   year        = {2024},
   arxiv       = {2405.19452},
   pdf         = {https://arxiv.org/pdf/2405.19452},
+  video       = {https://youtu.be/eVFQbRyilCA},
+  video_auto  = {true},
   abstract    = {The current state-of-the-art in quadruped locomotion is able to produce a variety of complex motions. These methods either rely on switching between a discrete set of skills or learn a distribution across gaits using complex black-box models. Alternatively, we present Gaitor, which learns a disentangled and 2D representation across locomotion gaits. This learnt representation forms a planning space for closed-loop control delivering continuous gait transitions and perceptive terrain traversal. Gaitor's latent space is readily interpretable and we discover that during gait transitions, novel unseen gaits emerge. The latent space is disentangled with respect to footswing heights and lengths. This means that these gait characteristics can be varied independently in the 2D latent representation. Together with a simple terrain encoding and a learnt planner operating in the latent space, Gaitor can take motion commands including desired gait type and swing characteristics all while reacting to uneven terrain. We evaluate Gaitor in both simulation and the real world on the ANYmal C platform. To the best of our knowledge, this is the first work learning a unified and interpretable latent space for multiple gaits, resulting in continuous blending between different locomotion modes on a real quadruped robot. An overview of the methods and results in this paper is found at https://youtu.be/eVFQbRyilCA.},
   s2_id       = {d6da49e814d2721437e86b0fe003824ed6656e25}
 }
@@ -120,6 +127,7 @@
   pages       = {204--215},
   year        = {2022},
   doi         = {10.1007/978-3-031-15226-9_21},
+  video       = {https://youtu.be/IC_qGkWpmTQ},
   s2_id       = {d3c5a33ff54e16341d72441fa61547fa0cfd2dc5}
 }
 
@@ -129,7 +137,8 @@
   title       = {Middleware Interconnecting ROS/ROS2 with the EtherCAT Protocol},
   author      = {Aristotelis Papatheodorou and Athanasios S. Mastrogeorgiou and Konstantinos Machairas and Konstantinos Koutsoukis and Evangelos Papadopoulos},
   booktitle   = {ROSCon (ROS World)},
-  year        = {2021}
+  year        = {2021},
+  video       = {https://vimeo.com/649651918}
 }
 
 @mastersthesis{papatheodorou2021design,
