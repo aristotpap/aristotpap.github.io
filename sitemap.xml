@@ -1,0 +1,17 @@
+---
+# Lists only the home page and the pages shown in the navbar (nav: true). The al-folio demo
+# content is hidden from the navbar but still built (example posts, projects, books, the
+# example CV, tag and category archives), and jekyll-sitemap would otherwise list all of it.
+# Delete this file to go back to jekyll-sitemap's auto-generated sitemap of every page.
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for page in site.html_pages %}
+    {%- if page.url == '/' or page.nav %}
+  <url>
+    <loc>{{ page.url | absolute_url | xml_escape }}</loc>
+  </url>
+    {%- endif %}
+  {%- endfor %}
+</urlset>
