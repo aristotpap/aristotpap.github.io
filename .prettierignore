@@ -8,3 +8,5 @@ _posts/2015-10-20-math.md
 _data/citations.yml
 # Local copy of the al_folio_core main.scss (contains Liquid); keep the copied part identical to the gem
 assets/css/main.scss
+# Google Search Console verification file; must stay exactly as Google issued it
+google21d1662c513b212d.html
